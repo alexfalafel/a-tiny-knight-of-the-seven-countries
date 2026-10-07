@@ -1,0 +1,162 @@
+{
+  "scope": "Setup resource inventory excludes main.js debug meshes, actor wrapper groups and global lights; not a rendered frame or FPS benchmark.",
+  "inventory": {
+    "objects": 351,
+    "meshes": 273,
+    "visibleMeshes": 201,
+    "skinnedMeshes": 0,
+    "instancedMeshes": 26,
+    "activeLights": 6,
+    "inactiveLights": 0,
+    "shadowLights": 0,
+    "visibleShadowCasters": 138,
+    "materials": 72,
+    "geometries": 104
+  },
+  "player": {
+    "objects": 75,
+    "meshes": 50,
+    "visibleMeshes": 48,
+    "skinnedMeshes": 0,
+    "instancedMeshes": 0,
+    "activeLights": 0,
+    "inactiveLights": 0,
+    "shadowLights": 0,
+    "visibleShadowCasters": 44,
+    "materials": 15,
+    "geometries": 34
+  },
+  "duplicateMaterials": [],
+  "duplicatePrimitiveGeometries": [
+    {
+      "count": 2,
+      "signature": "{\"type\":\"BoxGeometry\",\"width\":1,\"height\":1,\"depth\":1,\"widthSegments\":1,\"heightSegments\":1,\"depthSegments\":1}"
+    },
+    {
+      "count": 2,
+      "signature": "{\"type\":\"SphereGeometry\",\"radius\":1,\"widthSegments\":14,\"heightSegments\":10,\"phiStart\":0,\"phiLength\":6.283185307179586,\"thetaStart\":0,\"thetaLength\":3.141592653589793}"
+    }
+  ],
+  "rooms": [
+    {
+      "id": "greatHall",
+      "meshes": 12,
+      "instanced": [
+        {
+          "instances": 16,
+          "color": "555653"
+        },
+        {
+          "instances": 8,
+          "color": "594b3b"
+        },
+        {
+          "instances": 2,
+          "color": "594b3b"
+        },
+        {
+          "instances": 2,
+          "color": "594b3b"
+        },
+        {
+          "instances": 4,
+          "color": "746c5d"
+        }
+      ]
+    },
+    {
+      "id": "royalKitchen",
+      "meshes": 10,
+      "instanced": [
+        {
+          "instances": 6,
+          "color": "555653"
+        },
+        {
+          "instances": 2,
+          "color": "594b3b"
+        }
+      ]
+    },
+    {
+      "id": "armory",
+      "meshes": 9,
+      "instanced": [
+        {
+          "instances": 6,
+          "color": "555653"
+        },
+        {
+          "instances": 2,
+          "color": "594b3b"
+        },
+        {
+          "instances": 2,
+          "color": "73797b"
+        },
+        {
+          "instances": 2,
+          "color": "594b3b"
+        },
+        {
+          "instances": 2,
+          "color": "746c5d"
+        }
+      ]
+    },
+    {
+      "id": "dungeon",
+      "meshes": 7,
+      "instanced": [
+        {
+          "instances": 6,
+          "color": "303332"
+        },
+        {
+          "instances": 12,
+          "color": "73797b"
+        },
+        {
+          "instances": 2,
+          "color": "303332"
+        }
+      ]
+    },
+    {
+      "id": "royalChambers",
+      "meshes": 8,
+      "instanced": [
+        {
+          "instances": 8,
+          "color": "555653"
+        }
+      ]
+    },
+    {
+      "id": "throneRoom",
+      "meshes": 16,
+      "instanced": [
+        {
+          "instances": 4,
+          "color": "594b3b"
+        },
+        {
+          "instances": 5,
+          "color": "73797b"
+        },
+        {
+          "instances": 5,
+          "color": "73797b"
+        },
+        {
+          "instances": 6,
+          "color": "555653"
+        },
+        {
+          "instances": 2,
+          "color": "746c5d"
+        }
+      ]
+    }
+  ]
+}

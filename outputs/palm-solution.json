@@ -1,0 +1,24 @@
+{
+  "method": "Hand skin weight >= .75; measured cuff-to-digit palm slab; local surface-bounds center; transverse covariance frame",
+  "vertices": 274,
+  "palmLocal": [
+    -0.010524349544901668,
+    0.14062618089190557,
+    -0.014258887849805996
+  ],
+  "socketRotation": [
+    7.162024018455033e-7,
+    0.19270480095141193,
+    4.6169900727656435e-8
+  ],
+  "correctionRotation": [
+    -0.6425533884579033,
+    -0.6325838551704254,
+    -2.890513335665733
+  ],
+  "palmWorld": [
+    0.32000451243657646,
+    0.5271530115473566,
+    9.34176851193098
+  ]
+}

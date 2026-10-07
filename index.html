@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#111315" />
+    <title>A Tiny Knight of the 7 Countries</title>
+  </head>
+  <body>
+    <main id="game" aria-label="A Tiny Knight of the 7 Countries game"></main>
+    <section id="welcome" class="welcome">
+      <div class="welcome-card royal-frame">
+        <p class="eyebrow">A tale of the seven countries</p>
+        <div class="title-crest" aria-hidden="true"><span></span><b>✦</b><span></span></div>
+        <h1>A TINY KNIGHT<br />OF THE 7 COUNTRIES</h1>
+        <p class="title-subtitle">A royal crown awaits its rightful place.</p>
+        <div class="title-actions"><button id="begin" class="royal-button" type="button">Begin</button><button id="controls-toggle" class="royal-button secondary" type="button" aria-expanded="false" aria-controls="controls-panel">Controls</button></div>
+        <div id="controls-panel" class="controls-panel" hidden>
+          <p><kbd>W A S D</kbd><span>Move</span><kbd>Mouse</kbd><span>Camera</span></p>
+          <p><kbd>Space</kbd><span>Jump / Climb Leap</span><kbd>Q</kbd><span>Dodge</span></p>
+          <p><kbd>Left Click</kbd><span>Attack</span><kbd>E</kbd><span>Interact / Climb</span></p>
+          <p><kbd>1 / .</kbd><span>Aura Walk</span><kbd>Tab / Middle Click</kbd><span>Lock On</span></p>
+          <p><kbd>2</kbd><span>Kneeling Bow</span><kbd>3</kbd><span>Kneel / Cancel</span></p>
+          <p><kbd>R</kbd><span>Royal Tonic / Retry after falling</span></p>
+          <p><kbd>1 / 2</kbd><span>Throne choice (at the finale)</span></p>
+        </div>
+        <p class="hint">Click the scene to capture the mouse · Esc releases it</p>
+      </div>
+    </section>
+    <div id="state-label" class="state-label">RUN</div>
+    <div id="climb-prompt" class="climb-prompt"><kbd>E</kbd><span>CLIMB</span></div>
+    <div id="room-title" class="room-title">GREAT HALL</div>
+    <div id="lock-on-indicator" class="lock-on-indicator" aria-hidden="true"></div>
+    <div id="screen-fade" class="screen-fade"></div>
+    <section id="tunnel-menu" class="tunnel-menu" aria-label="Rat tunnel fast travel">
+      <div class="tunnel-card royal-frame"><p class="panel-kicker">UNDER THE CASTLE</p><h2>RAT TUNNELS</h2><div id="tunnel-destinations" class="tunnel-destinations"></div><button id="tunnel-close" class="royal-button secondary" type="button">Cancel <kbd>Esc</kbd></button></div>
+    </section>
+    <div id="climb-stamina" class="climb-stamina" aria-label="Climbing stamina">
+      <svg viewBox="0 0 64 64" aria-hidden="true">
+        <circle class="stamina-track" cx="32" cy="32" r="27"></circle>
+        <circle id="climb-stamina-arc" class="stamina-arc" cx="32" cy="32" r="27"></circle>
+      </svg>
+      <span id="climb-stamina-text">100</span>
+    </div>
+    <section id="crown-hud" class="crown-hud" aria-label="Crown fragment progress">
+      <div class="crown-hud-title"><span>CROWN</span><strong id="crown-count">0 / 5</strong></div>
+      <div id="crown-indicators" class="crown-indicators" aria-hidden="true">
+        <i></i><i></i><i></i><i></i><i></i>
+      </div>
+      <span id="crown-status" class="crown-status"></span>
+    </section>
+    <section class="score-hud royal-frame" aria-label="Score"><span>Score</span><strong id="score-value">—</strong></section>
+    <div id="fps-counter" class="fps-counter" aria-label="Frames per second and network latency">
+      <span>FPS: <strong id="fps-value">—</strong></span>
+      <span class="fps-separator" aria-hidden="true">|</span>
+      <span>PING: <strong id="ping-value">LOCAL</strong></span>
+    </div>
+    <div id="pickup-toast" class="pickup-toast" role="status" aria-live="polite">
+      <strong id="pickup-title">CROWN FRAGMENT FOUND</strong><span id="pickup-count">1 / 5</span>
+    </div>
+    <section id="crown-reconstruction" class="crown-reconstruction" aria-live="polite">
+      <div class="reconstruction-content">
+        <div class="reconstruction-stage" aria-hidden="true">
+          <div class="reconstruction-shards"><i></i><i></i><i></i><i></i><i></i></div>
+          <svg class="whole-crown" viewBox="0 0 180 130">
+            <path d="M24 37 51 61 68 16 90 58 112 16 129 61 156 37 143 103 37 103Z" />
+            <path d="M37 112h106" />
+            <circle cx="90" cy="82" r="9" />
+          </svg>
+        </div>
+        <h2 id="crown-reconstruction-message">THE CROWN IS WHOLE</h2>
+      </div>
+    </section>
+    <pre id="perf-panel" class="perf-panel" aria-live="off"></pre>
+    <pre id="boss-debug-panel" class="boss-debug-panel" aria-live="off"></pre>
+    <section id="combat-hud" class="combat-hud" aria-live="polite">
+      <div class="health-card royal-frame"><span class="hud-label">VITALITY</span><div id="player-health" class="vitality" role="img" aria-label="100 of 100 HP"><div class="vitality-track"><div class="vitality-fill"></div></div><span class="vitality-value">100 / 100</span></div><div id="royal-tonic" class="tonic-label">ROYAL TONIC 3 / 3 [R]</div></div>
+      <div id="enemy-health-wrap" class="enemy-health-wrap">
+        <div class="enemy-health-title"><span>HALL BEETLE</span><span id="enemy-health-text">8 / 8</span></div>
+        <div class="enemy-health-track"><div id="enemy-health-fill" class="enemy-health-fill"></div></div>
+      </div>
+    </section>
+    <section id="boss-health-wrap" class="boss-health-wrap" aria-live="polite">
+      <div class="boss-health-title"><span id="boss-health-name">ARMORED BEETLE</span><span id="boss-health-text">10 / 10</span></div>
+      <div class="boss-health-track"><div id="boss-health-fill" class="boss-health-fill"></div></div>
+    </section>
+    <div id="boss-hit-callout" class="boss-hit-callout" aria-live="off"></div>
+    <div id="damage-flash" class="damage-flash"></div>
+    <section id="finale-choice" class="finale-panel" aria-label="Throne choice">
+      <div class="finale-card royal-frame"><p class="finale-eyebrow">THE THRONE ROOM</p><h2>WHAT WILL YOU DO?</h2>
+        <button id="give-crown" class="royal-button" type="button">GIVE HER THE CROWN <span>1</span></button>
+        <button id="claim-crown" class="royal-button" type="button">CLAIM THE CROWN <span>2</span></button>
+      </div>
+    </section>
+    <section id="finale-text" class="finale-panel finale-message" aria-live="polite"><h2></h2></section>
+    <div id="ending-dim" class="ending-dim" aria-hidden="true"></div>
+    <section id="finale-results" class="finale-panel" aria-label="Ending results">
+      <div class="finale-card royal-frame"><p class="finale-eyebrow">THE SEVEN COUNTRIES</p><h2>GOOD ENDING</h2>
+        <p id="result-crown"></p><p id="result-beetle"></p><p id="result-rat"></p>
+        <button id="play-again" class="royal-button" type="button">PLAY AGAIN</button>
+      </div>
+    </section>
+    <section id="secret-results" class="finale-panel" aria-label="Secret ending results">
+      <div class="finale-card royal-frame secret-frame"><p class="finale-eyebrow">THE SEVEN COUNTRIES</p><h2>SECRET ENDING</h2>
+        <p id="secret-result-crown"></p><p id="secret-result-beetle"></p><p id="secret-result-rat"></p><p id="secret-result-dragon"></p><p>Ending: TINY KING</p>
+        <button id="play-again-secret" class="royal-button" type="button">PLAY AGAIN</button>
+      </div>
+    </section>
+    <section id="death-overlay" class="death-overlay">
+      <div class="death-card royal-frame"><p class="panel-kicker">THE CROWN REMAINS SHATTERED</p><h2>YOU HAVE FALLEN</h2><div class="panel-divider" aria-hidden="true"></div><p><kbd>R</kbd> Retry</p></div>
+    </section>
+    <script type="module" src="/src/main.js"></script>
+</body>
+</html>

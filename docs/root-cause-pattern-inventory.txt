@@ -1,0 +1,32 @@
+src\BossController.js:13:    this.spawn = spawn.clone();
+src\ArmoredRatKnightBoss.js:91:    this.shellColor = armor.color.clone();
+src\ArmoredBeetleBoss.js:61:    this.baseShellColor = shellMat.color.clone();
+src\DragonBoss.js:48:    this.baseEmberColor = this.emberMaterial.color.clone();
+src\EnemyController.js:13:    this.spawn = spawn.clone(); this.group = new THREE.Group(); this.group.position.copy(spawn); scene.add(this.group);
+src\EnemyController.js:31:    this.baseShellColor = shellMaterial.color.clone(); this.telegraphColor = new THREE.Color(0xd5863f);
+src\InputManager.js:31:    window.addEventListener("keydown", this.onKeyDown);
+src\InputManager.js:32:    window.addEventListener("keyup", this.onKeyUp);
+src\InputManager.js:33:    window.addEventListener("mousedown", this.onMouseDown);
+src\InputManager.js:34:    document.addEventListener("mousemove", this.onMouseMove);
+src\InputManager.js:35:    document.addEventListener("pointerlockchange", this.onLockChange);
+src\InputManager.js:37:    window.addEventListener("blur", this.onBlur);
+src\main.js:264:renderer.domElement.addEventListener("click", startGame);
+src\main.js:269:beginButton.addEventListener("click", handleBeginClick);
+src\main.js:271:controlsToggle.addEventListener("click", () => {
+src\main.js:295:    const helper = new THREE.Box3Helper(box, roomOutlineMaterial.clone());
+src\main.js:410:document.querySelector("#give-crown").addEventListener("click", () => finale.chooseGive());
+src\main.js:411:document.querySelector("#claim-crown").addEventListener("click", () => finale.chooseClaim());
+src\main.js:412:document.querySelector("#play-again").addEventListener("click", () => location.reload());
+src\main.js:413:document.querySelector("#play-again-secret").addEventListener("click", () => location.reload());
+src\main.js:438:copyReportButton.addEventListener("click", async () => {
+src\main.js:447:  setTimeout(() => { copyReportButton.textContent = "COPY PERFORMANCE REPORT"; }, 1400);
+src\main.js:449:closeReportButton.addEventListener("click", () => { capturePanel.hidden = true; input.clear(); });
+src\main.js:510:document.addEventListener("visibilitychange", () => {
+src\main.js:626:tunnelDestinations.addEventListener("click", (event) => {
+src\main.js:638:tunnelClose.addEventListener("click", closeTunnelMenu);
+src\main.js:639:window.addEventListener("keydown", (event) => { if (event.code === "Escape" && menuOpen) closeTunnelMenu(); });
+src\main.js:811:  requestAnimationFrame(frame);
+src\main.js:1251:window.addEventListener("resize", () => { camera.aspect = innerWidth / innerHeight; camera.updateProjectionMatrix(); renderer.setSize(innerWidth, innerHeight); });
+src\PlayerController.js:10:    this.group = new THREE.Group(); scene.add(this.group); this.spawn = spawn.clone(); this.group.position.copy(spawn);
+src\SceneOptimization.js:46:      const geometry = object.geometry.clone().applyMatrix4(transform);
+src\TestLevel.js:320:      batch.computeBoundingBox(); batch.computeBoundingSphere(); group.add(batch);

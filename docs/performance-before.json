@@ -1,0 +1,71 @@
+{
+  "kind": "static scene structure; excludes actors, frustum and shadow render passes",
+  "rooms": {
+    "greatHall": {
+      "meshes": 39,
+      "instances": 39,
+      "triangles": 690,
+      "geometries": 22,
+      "materials": 7,
+      "shadowCasters": 25,
+      "collisionCandidatesAtSpawn": 10,
+      "collisionChecksForThreePasses": 30,
+      "climbables": 6
+    },
+    "royalKitchen": {
+      "meshes": 16,
+      "instances": 16,
+      "triangles": 470,
+      "geometries": 13,
+      "materials": 7,
+      "shadowCasters": 11,
+      "collisionCandidatesAtSpawn": 6,
+      "collisionChecksForThreePasses": 18,
+      "climbables": 4
+    },
+    "armory": {
+      "meshes": 18,
+      "instances": 18,
+      "triangles": 438,
+      "geometries": 12,
+      "materials": 6,
+      "shadowCasters": 9,
+      "collisionCandidatesAtSpawn": 5,
+      "collisionChecksForThreePasses": 15,
+      "climbables": 2
+    },
+    "dungeon": {
+      "meshes": 24,
+      "instances": 24,
+      "triangles": 510,
+      "geometries": 11,
+      "materials": 5,
+      "shadowCasters": 6,
+      "collisionCandidatesAtSpawn": 5,
+      "collisionChecksForThreePasses": 15,
+      "climbables": 2
+    },
+    "royalChambers": {
+      "meshes": 15,
+      "instances": 15,
+      "triangles": 402,
+      "geometries": 13,
+      "materials": 6,
+      "shadowCasters": 11,
+      "collisionCandidatesAtSpawn": 10,
+      "collisionChecksForThreePasses": 30,
+      "climbables": 4
+    },
+    "throneRoom": {
+      "meshes": 33,
+      "instances": 33,
+      "triangles": 852,
+      "geometries": 29,
+      "materials": 8,
+      "shadowCasters": 18,
+      "collisionCandidatesAtSpawn": 13,
+      "collisionChecksForThreePasses": 39,
+      "climbables": 2
+    }
+  }
+}

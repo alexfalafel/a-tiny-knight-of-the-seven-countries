@@ -1,0 +1,107 @@
+[
+  {
+    "file": "animation-blending-validation.mjs",
+    "ok": true,
+    "code": 0,
+    "stdout": "[PlayerAnimation] Found animations (9): 01a10fae-d4d5-72e5-ace6-cc830b78946c | Running | Walking | Attack | Triple_Combo_Attack | 01a10fb1-42e0-70de-9628-735b3ef4e968 | 01a10fb1-fc3c-70a3-b564-88cda0588813 | 01a10fb2-e41c-77fc-a7c5-2cc1ac53b709 | Alert\n[PlayerAnimation] Root translation neutralized: none\nPASS: locomotion, combo, dodge, jump, landing, Death, phase sync, and same-action no-restart transitions validated.\n",
+    "stderr": ""
+  },
+  {
+    "file": "climb-animation-validation.mjs",
+    "ok": true,
+    "code": 0,
+    "stdout": "[PlayerAnimation] Found animations (4): climbing_up_wall | climbing_down_wall | Climb_Left_with_Both_Limbs_inplace | Climb_Right_with_Both_Limbs_inplace\n[PlayerAnimation] Root translation neutralized: climbing_up_wall (horizontal 0.17m, vertical 0.20m); climbing_down_wall (horizontal 0.17m, vertical 0.20m); Climb_Left_with_Both_Limbs_inplace (horizontal 0.17m); Climb_Right_with_Both_Limbs_inplace (horizontal 0.17m)\n[PlayerAnimation] Found animations (18): Running | Walking | 01a10fae-d4d5-72e5-ace6-cc830b78946c | 01a10fb1-42e0-70de-9628-735b3ef4e968 | 01a10fb1-fc3c-70a3-b564-88cda0588813 | 01a10fb2-e41c-77fc-a7c5-2cc1ac53b709 | 01a10fb3-8e13-75e8-afb0-d94a6529ed62 | 01a10fb4-abe5-7736-9785-3578dbd64869 | Alert | Attack | Casual_Walk | Chair_Sit_Idle_M | Climb_Left_with_Both_Limbs_inplace | Climb_Right_with_Both_Limbs_inplace | Triple_Combo_Attack | climbing_down_wall | climbing_up_wall | restpose\n[PlayerAnimation] Root translation neutralized: 01a10fb1-42e0-70de-9628-735b3ef4e968 (horizontal 2.55m); 01a10fb1-fc3c-70a3-b564-88cda0588813 (horizontal 0.23m); 01a10fb2-e41c-77fc-a7c5-2cc1ac53b709 (horizontal 2.33m); 01a10fb3-8e13-75e8-afb0-d94a6529ed62 (horizontal 0.14m); 01a10fb4-abe5-7736-9785-3578dbd64869 (horizontal 0.11m); Attack (horizontal 0.34m); Casual_Walk (horizontal 0.06m); Climb_Left_with_Both_Limbs_inplace (horizontal 0.11m); Climb_Right_with_Both_Limbs_inplace (horizontal 0.11m); Triple_Combo_Attack (horizontal 1.32m); climbing_down_wall (horizontal 0.24m, vertical 0.74m); climbing_up_wall (horizontal 0.23m, vertical 0.92m)\nPASS: 20 repeated production climb attach/direction/idle/jump/reset cycles; stable action count.\nProduction GLB root motion: [{\"name\":\"climbing_up_wall\",\"duration\":2,\"horizontalRemoved\":0.23363853102364074,\"hipVerticalRange\":0,\"hipVerticalEndpointDelta\":0},{\"name\":\"climbing_down_wall\",\"duration\":2,\"horizontalRemoved\":0.23759783776068436,\"hipVerticalRange\":0,\"hipVerticalEndpointDelta\":0},{\"name\":\"Climb_Left_with_Both_Limbs_inplace\",\"duration\":1.2083333730697632,\"horizontalRemoved\":0.11101411125741302,\"hipVerticalRange\":0.133,\"hipVerticalEndpointDelta\":0},{\"name\":\"Climb_Right_with_Both_Limbs_inplace\",\"duration\":1.2083333730697632,\"horizontalRemoved\":0.11117755853282164,\"hipVerticalRange\":0.118,\"hipVerticalEndpointDelta\":0}]\nPASS: GLB clip identity/duration, directional state mapping, playback, looping, root-motion cleanup, diagonal stability, Aura preservation, attach/detach blends, sword visibility, and climb-jump transition.\n",
+    "stderr": "THREE.GLTFLoader: Couldn't load texture blob:nodedata:df228260-0630-44ef-bd4e-4d049ae59853\nTHREE.GLTFLoader: Couldn't load texture blob:nodedata:392dd40b-3ab5-4dc0-85ab-cd1b715f18d1\nTHREE.GLTFLoader: Couldn't load texture blob:nodedata:f9d236bb-fd84-4021-8747-224ec5e0687f\n"
+  },
+  {
+    "file": "combat-impact-validation.mjs",
+    "ok": true,
+    "code": 0,
+    "stdout": "PASS: authoritative hit confirmation, no feedback on misses/zero damage, exact attack hit-stop values, once-per-swing SFX hook and impulse, 30 seconds of bounded pooled particles, enemy visual-only recoil, and boss stagger priority.\n",
+    "stderr": ""
+  },
+  {
+    "file": "combat-validation.mjs",
+    "ok": true,
+    "code": 0,
+    "stdout": "SWIPE damage 16 hit events 1 mandatory recovery + decision delay: PASS\nSLAM damage 28 hit events 1 mandatory recovery + decision delay: PASS\nCHARGE damage 24 hit events 1 mandatory recovery + decision delay: PASS\nQUICK damage 16 hit events 1 mandatory recovery + decision delay: PASS\nHEAVY damage 28 hit events 1 mandatory recovery + decision delay: PASS\nCOMBO_1 damage 16 hit events 2 mandatory recovery + decision delay: PASS\nLUNGE damage 24 hit events 1 mandatory recovery + decision delay: PASS\nPASS: numeric HP, iframes, timed healing, input restrictions, interruption before/after commit, cap, charges, retry, boss commitment, turn cap, finite combo, one hit/swing, recovery, spacing and vertical hitboxes.\n",
+    "stderr": ""
+  },
+  {
+    "file": "diagnostics-validation.mjs",
+    "ok": true,
+    "code": 0,
+    "stdout": "PASS asynchronous GPU availability/disjoint/reuse, capture spike timestamps/aggregation, optional GPU fallback and immutable geometry cache identity\n",
+    "stderr": ""
+  },
+  {
+    "file": "emote-validation.mjs",
+    "ok": true,
+    "code": 0,
+    "stdout": "PASS: 50 repeated production emote cycles; stable action count.\nProduction GLB clips (18): [{\"name\":\"Running\",\"durationSeconds\":0.667},{\"name\":\"Walking\",\"durationSeconds\":1.042},{\"name\":\"01a10fae-d4d5-72e5-ace6-cc830b78946c\",\"durationSeconds\":4.042},{\"name\":\"01a10fb1-42e0-70de-9628-735b3ef4e968\",\"durationSeconds\":2.042},{\"name\":\"01a10fb1-fc3c-70a3-b564-88cda0588813\",\"durationSeconds\":2.042},{\"name\":\"01a10fb2-e41c-77fc-a7c5-2cc1ac53b709\",\"durationSeconds\":3.542},{\"name\":\"01a10fb3-8e13-75e8-afb0-d94a6529ed62\",\"durationSeconds\":3.042},{\"name\":\"01a10fb4-abe5-7736-9785-3578dbd64869\",\"durationSeconds\":4.042},{\"name\":\"Alert\",\"durationSeconds\":4},{\"name\":\"Attack\",\"durationSeconds\":2.833},{\"name\":\"Casual_Walk\",\"durationSeconds\":4.208},{\"name\":\"Chair_Sit_Idle_M\",\"durationSeconds\":10.708},{\"name\":\"Climb_Left_with_Both_Limbs_inplace\",\"durationSeconds\":1.208},{\"name\":\"Climb_Right_with_Both_Limbs_inplace\",\"durationSeconds\":1.208},{\"name\":\"Triple_Combo_Attack\",\"durationSeconds\":4.333},{\"name\":\"climbing_down_wall\",\"durationSeconds\":2},{\"name\":\"climbing_up_wall\",\"durationSeconds\":2},{\"name\":\"restpose\",\"durationSeconds\":0.083}]\nEmote root-motion and playback: [{\"name\":\"Kneeling Bow\",\"duration\":3.042,\"neutralizedHorizontalMeters\":0.136,\"localHipsVerticalRange\":0.347},{\"name\":\"Kneel\",\"duration\":4.042,\"neutralizedHorizontalMeters\":0.107,\"localHipsVerticalRange\":0.209}]\nPASS: actual GLB inventory/mapping; Aura keys 1, Period, and numpad decimal; Digit2/3 emotes; one-shot, held-pose, emote crossfade, horizontal root-motion cleanup; same-key toggle; movement, attack, dodge, jump, combat/lock-on, damage, healing, climbing, scripted sequence, completion, and retry cancellation.\n",
+    "stderr": "THREE.GLTFLoader: Couldn't load texture blob:nodedata:d5b69bbd-0861-4a71-afec-ecae05c140c4\nTHREE.GLTFLoader: Couldn't load texture blob:nodedata:cc46c027-697e-4671-bc78-472cd04aee2d\nTHREE.GLTFLoader: Couldn't load texture blob:nodedata:c1c8d36c-1f45-4ce0-b792-f75363729a90\n"
+  },
+  {
+    "file": "foot-contact-validation.mjs",
+    "ok": true,
+    "code": 0,
+    "stdout": "[PlayerAnimation] Found animations (18): Running | Walking | 01a10fae-d4d5-72e5-ace6-cc830b78946c | 01a10fb1-42e0-70de-9628-735b3ef4e968 | 01a10fb1-fc3c-70a3-b564-88cda0588813 | 01a10fb2-e41c-77fc-a7c5-2cc1ac53b709 | 01a10fb3-8e13-75e8-afb0-d94a6529ed62 | 01a10fb4-abe5-7736-9785-3578dbd64869 | Alert | Attack | Casual_Walk | Chair_Sit_Idle_M | Climb_Left_with_Both_Limbs_inplace | Climb_Right_with_Both_Limbs_inplace | Triple_Combo_Attack | climbing_down_wall | climbing_up_wall | restpose\n[PlayerAnimation] Root translation neutralized: 01a10fb1-42e0-70de-9628-735b3ef4e968 (horizontal 2.55m); 01a10fb1-fc3c-70a3-b564-88cda0588813 (horizontal 0.23m); 01a10fb2-e41c-77fc-a7c5-2cc1ac53b709 (horizontal 2.33m); 01a10fb3-8e13-75e8-afb0-d94a6529ed62 (horizontal 0.14m); 01a10fb4-abe5-7736-9785-3578dbd64869 (horizontal 0.11m); Attack (horizontal 0.34m); Casual_Walk (horizontal 0.06m); Climb_Left_with_Both_Limbs_inplace (horizontal 0.11m); Climb_Right_with_Both_Limbs_inplace (horizontal 0.11m); Triple_Combo_Attack (horizontal 1.32m); climbing_down_wall (horizontal 0.24m, vertical 0.74m); climbing_up_wall (horizontal 0.23m, vertical 0.92m)\n{\"case\":\"before: rug omitted\",\"feet\":[{\"side\":\"left\",\"surface\":\"greatHall-floor\",\"hitY\":0,\"soleY\":-0.03543167725521278,\"gap\":-0.03543167725521278,\"targetY\":0.0451,\"smoothedY\":0.0451,\"weight\":0.9999999999999998},{\"side\":\"right\",\"surface\":\"greatHall-floor\",\"hitY\":0,\"soleY\":-0.032125122847937525,\"gap\":-0.032125122847937525,\"targetY\":0.048400000000000006,\"smoothedY\":0.04840000000000001,\"weight\":0.9999999999999998}],\"pelvis\":-0.025951581494036705}\n{\"case\":\"bare stone\",\"feet\":[{\"side\":\"left\",\"surface\":\"greatHall-floor\",\"hitY\":0,\"soleY\":-0.035431677255183314,\"gap\":-0.035431677255183314,\"targetY\":0.0451,\"smoothedY\":0.0451,\"weight\":0.9999999999999998},{\"side\":\"right\",\"surface\":\"greatHall-floor\",\"hitY\":0,\"soleY\":-0.03212512284793767,\"gap\":-0.03212512284793767,\"targetY\":0.048400000000000006,\"smoothedY\":0.04840000000000001,\"weight\":0.9999999999999998}],\"pelvis\":-0.02595158149403714}\n{\"case\":\"rug center\",\"feet\":[{\"side\":\"left\",\"surface\":\"Great Hall Rug\",\"hitY\":0.0625,\"soleY\":0.027068323676195057,\"gap\":-0.03543167632380494,\"targetY\":0.1076,\"smoothedY\":0.10759999999999999,\"weight\":0.9999999999999998},{\"side\":\"right\",\"surface\":\"Great Hall Rug\",\"hitY\":0.0625,\"soleY\":0.030374876220738402,\"gap\":-0.0321251237792616,\"targetY\":0.1109,\"smoothedY\":0.11089999999999997,\"weight\":0.9999999999999998}],\"pelvis\":0.03654841850596204}\n{\"case\":\"split feet at rug edge\",\"feet\":[{\"side\":\"left\",\"surface\":\"Great Hall Rug\",\"hitY\":0.0625,\"soleY\":0.009358488205259658,\"gap\":-0.053141511794740345,\"targetY\":0.1076,\"smoothedY\":0.10759999999999999,\"weight\":0.9999999999999998},{\"side\":\"right\",\"surface\":\"greatHall-floor\",\"hitY\":0,\"soleY\":-0.015324650285108092,\"gap\":-0.015324650285108092,\"targetY\":0.048400000000000006,\"smoothedY\":0.048400000000000026,\"weight\":0.9999999999999998}],\"pelvis\":0.0052984185059634795}\n{\"case\":\"COMBAT_WALK onto/off rug\",\"selected\":[\"Great Hall Rug\",\"greatHall-floor\"],\"maxSmoothedStep\":0.016198861207392633}\n{\"case\":\"RUN_ALL_FOURS onto/off rug\",\"selected\":[\"Great Hall Rug\",null,\"greatHall-floor\"],\"maxSmoothedStep\":0.016198861207392633}\n{\"case\":\"AURA_WALK onto/off rug\",\"selected\":[null,\"Great Hall Rug\",\"greatHall-floor\"],\"maxSmoothedStep\":0.016198861207392633}\nPASS: highest visible support, range, room offsets, independent feet, unchanged root, and animated rug transitions.\n",
+    "stderr": "THREE.GLTFLoader: Couldn't load texture blob:nodedata:5fd5f825-b024-4b4b-9a08-dd43a5185c22\nTHREE.GLTFLoader: Couldn't load texture blob:nodedata:e7cd77ff-fb7b-4704-b1bb-4b117c22ab44\nTHREE.GLTFLoader: Couldn't load texture blob:nodedata:8b1ac43c-e2d2-4282-ab46-73765704716c\n"
+  },
+  {
+    "file": "overnight-hardening-validation.mjs",
+    "ok": true,
+    "code": 0,
+    "stdout": "PASS pointer unlock, hidden tab, editable focus, and listener disposal\nPASS death overrides climbing and impact freeze; retry clears directional state\nPASS held attack chaining survives presentation freezes and stops on release\nPASS only living particles draw immediately; ten-minute simulated pool stays bounded\nPASS camera impulses settle without drift; reset clears impulses\nPASS lock break grace advances once per frame and clears dead/changed-room targets\nPASS boss true stagger, committed attack, and death clear residual cosmetic recoil\nPASS fragment, guardian, and tunnel events remain idempotent across retry-style reuse\n",
+    "stderr": ""
+  },
+  {
+    "file": "performance-validation.mjs",
+    "ok": true,
+    "code": 0,
+    "stdout": "Controller idle: 600 steps passed; maximum collision checks 39\nController W: 600 steps passed; maximum collision checks 54\nController WA: 600 steps passed; maximum collision checks 54\nController camera: 600 steps passed; maximum collision checks 54\nController jump: 600 steps passed; maximum collision checks 39\nController dodge: 600 steps passed; maximum collision checks 39\nController aura: 600 steps passed; maximum collision checks 39\nPASS: room/connector collisions, climb identities, static matrices/bounds, movable crown, controller movement, capture aggregation, eight matrix modes, restoration and cancellation.\n",
+    "stderr": ""
+  },
+  {
+    "file": "ping-validation.mjs",
+    "ok": true,
+    "code": 0,
+    "stdout": "PASS: local indicator makes no requests; remote RTT uses same-origin cache-busted HEAD requests at 2.5 s intervals, smooths results, and reports failure without logging.\n",
+    "stderr": ""
+  },
+  {
+    "file": "root-cause-validation.mjs",
+    "ok": true,
+    "code": 0,
+    "stdout": "PASS rigid batches: identical triangles/materials and world bounds across 12 articulated poses and sword reparenting\nPASS 20 InputManager setup/disposal cycles leave zero listeners\nPASS sleeping hierarchy visits 434 -> 172; wake restores current transforms (test scene excludes main UI/debug nodes)\nPASS combat damage, climb/detach, all-room tunnel discovery/travel spawns, both guardians update/reset\nPASS both throne choices, dragon activation/AI/death, good and Tiny King ending sequences with batched rig\nFinal scene inventory (test scene, not browser frame): {\n  objects: 434,\n  meshes: 351,\n  visibleMeshes: 219,\n  skinnedMeshes: 0,\n  instancedMeshes: 92,\n  activeLights: 2,\n  inactiveLights: 6,\n  shadowLights: 0,\n  visibleShadowCasters: 146,\n  materials: 76,\n  geometries: 108\n}\n",
+    "stderr": ""
+  },
+  {
+    "file": "sfx-validation.mjs",
+    "ok": true,
+    "code": 0,
+    "stdout": "PASS: seven cached SFX assets; swing/hit variants avoid immediate repeats; volume map; bounded overlap; authoritative event wiring; all requested files exist.\n",
+    "stderr": ""
+  },
+  {
+    "file": "shadow-grounding-validation.mjs",
+    "ok": true,
+    "code": 0,
+    "stdout": "PASS: floor, rug, stairs, dais, cached support box, jump-height cancellation, and horizontal following.\n",
+    "stderr": ""
+  },
+  {
+    "file": "weapon-attachment-validation.mjs",
+    "ok": true,
+    "code": 0,
+    "stdout": "[PlayerAnimation] Found animations (18): Running | Walking | 01a10fae-d4d5-72e5-ace6-cc830b78946c | 01a10fb1-42e0-70de-9628-735b3ef4e968 | 01a10fb1-fc3c-70a3-b564-88cda0588813 | 01a10fb2-e41c-77fc-a7c5-2cc1ac53b709 | 01a10fb3-8e13-75e8-afb0-d94a6529ed62 | 01a10fb4-abe5-7736-9785-3578dbd64869 | Alert | Attack | Casual_Walk | Chair_Sit_Idle_M | Climb_Left_with_Both_Limbs_inplace | Climb_Right_with_Both_Limbs_inplace | Triple_Combo_Attack | climbing_down_wall | climbing_up_wall | restpose\n[PlayerAnimation] Root translation neutralized: 01a10fb1-42e0-70de-9628-735b3ef4e968 (horizontal 2.55m); 01a10fb1-fc3c-70a3-b564-88cda0588813 (horizontal 0.23m); 01a10fb2-e41c-77fc-a7c5-2cc1ac53b709 (horizontal 2.33m); 01a10fb3-8e13-75e8-afb0-d94a6529ed62 (horizontal 0.14m); 01a10fb4-abe5-7736-9785-3578dbd64869 (horizontal 0.11m); Attack (horizontal 0.34m); Casual_Walk (horizontal 0.06m); Climb_Left_with_Both_Limbs_inplace (horizontal 0.11m); Climb_Right_with_Both_Limbs_inplace (horizontal 0.11m); Triple_Combo_Attack (horizontal 1.32m); climbing_down_wall (horizontal 0.24m, vertical 0.74m); climbing_up_wall (horizontal 0.23m, vertical 0.92m)\nIDLE MEASUREMENT {\"palm\":[0.32000451243657646,0.5271530115473566,9.34176851193098],\"grip\":[0.32000451243657646,0.5271530115473566,9.34176851193098],\"distance\":0,\"blade\":[1.0088026283305824e-7,3.027304245775903e-9,-0.9999999999999949],\"bladeFaceNormal\":[0.990541880014022,0.1372107282186262,2.934915544977481e-8],\"worldDown\":[0,-1,0],\"playerForward\":[0,0,-1],\"forwardDot\":0.9999999999999949,\"faceDot\":-2.934915544977481e-8}\n{\"hand\":\"mixamorigRightHand\",\"hierarchy\":\"mixamorigRightHand/WeaponSocket/WeaponMount/WeaponVisual\",\"socket\":{\"position\":[-0.010524349544901668,0.14062618089190557,-0.014258887849805996],\"rotation\":[7.162024018455033e-7,0.19270480095141193,4.6169900727656435e-8],\"scale\":[1,1,1]},\"mount\":{\"position\":[0,0,0],\"rotation\":[0,0,-1.5707963267948966],\"scale\":[1,1,1]},\"externalModelPath\":\"/assets/models/weapons/rat-knight-sword.glb\",\"gripDistanceFromHand\":0.09921694054291076}\nIDLE_ALL_FOURS full-clip maximum palm gap mm: 0.000002\nRUN_ALL_FOURS full-clip maximum palm gap mm: 0.000064\nAURA_WALK full-clip maximum palm gap mm: 0.000051\nIDLE_COMBAT full-clip maximum palm gap mm: 0.000007\nCOMBAT_WALK full-clip maximum palm gap mm: 0.000051\nATTACK_1 full-clip maximum palm gap mm: 0.000062\nATTACK_2 full-clip maximum palm gap mm: 0.000058\nATTACK_3 full-clip maximum palm gap mm: 0.000034\nDODGE full-clip maximum palm gap mm: 0.000061\nJUMP full-clip maximum palm gap mm: 0.000058\nDEATH full-clip maximum palm gap mm: 0.000064\n[PlayerWeapon] Loaded /assets/models/weapons/rat-knight-sword.glb; bounds 0.100 × 0.900 × 0.200 (largest 0.900); auto scale 0.578.\nPASS: 11 animated states follow the fixed WeaponSocket/WeaponMount hierarchy; external bounds normalize to target length, replace fallback, and use fixed model corrections without manual overrides.\n",
+    "stderr": "[PlayerWeapon] /assets/models/weapons/rat-knight-sword.glb has empty bounds; keeping the procedural weapon.\n"
+  },
+  {
+    "file": "weapon-sheath-validation.mjs",
+    "ok": true,
+    "code": 0,
+    "stdout": "[PlayerAnimation] Found animations (18): Running | Walking | 01a10fae-d4d5-72e5-ace6-cc830b78946c | 01a10fb1-42e0-70de-9628-735b3ef4e968 | 01a10fb1-fc3c-70a3-b564-88cda0588813 | 01a10fb2-e41c-77fc-a7c5-2cc1ac53b709 | 01a10fb3-8e13-75e8-afb0-d94a6529ed62 | 01a10fb4-abe5-7736-9785-3578dbd64869 | Alert | Attack | Casual_Walk | Chair_Sit_Idle_M | Climb_Left_with_Both_Limbs_inplace | Climb_Right_with_Both_Limbs_inplace | Triple_Combo_Attack | climbing_down_wall | climbing_up_wall | restpose\n[PlayerAnimation] Root translation neutralized: 01a10fb1-42e0-70de-9628-735b3ef4e968 (horizontal 2.55m); 01a10fb1-fc3c-70a3-b564-88cda0588813 (horizontal 0.23m); 01a10fb2-e41c-77fc-a7c5-2cc1ac53b709 (horizontal 2.33m); 01a10fb3-8e13-75e8-afb0-d94a6529ed62 (horizontal 0.14m); 01a10fb4-abe5-7736-9785-3578dbd64869 (horizontal 0.11m); Attack (horizontal 0.34m); Casual_Walk (horizontal 0.06m); Climb_Left_with_Both_Limbs_inplace (horizontal 0.11m); Climb_Right_with_Both_Limbs_inplace (horizontal 0.11m); Triple_Combo_Attack (horizontal 1.32m); climbing_down_wall (horizontal 0.24m, vertical 0.74m); climbing_up_wall (horizontal 0.23m, vertical 0.92m)\n{\n  \"backBone\": \"mixamorigSpine2\",\n  \"backSocket\": {\n    \"position\": [\n      0,\n      0,\n      0\n    ],\n    \"rotation\": [\n      0,\n      0,\n      0\n    ]\n  },\n  \"backCorrection\": {\n    \"position\": [\n      -0.0014,\n      0.08,\n      -0.2\n    ],\n    \"rotation\": [\n      0.633757,\n      0.285426,\n      0.001507\n    ],\n    \"scale\": [\n      1,\n      1,\n      1\n    ]\n  },\n  \"backGripWorld\": [\n    0.14691671439790183,\n    0.9954220948191631,\n    -0.043901988968917116\n  ],\n  \"backBladeWorld\": [\n    -0.4026745944991899,\n    -0.9153229802448837,\n    -0.006083812993289679\n  ],\n  \"handSocket\": {\n    \"position\": [\n      -0.010524349544901668,\n      0.14062618089190557,\n      -0.014258887849805996\n    ],\n    \"rotation\": [\n      7.162024018455033e-7,\n      0.19270480095141193,\n      4.6169900727656435e-8\n    ]\n  },\n  \"handMount\": {\n    \"position\": [\n      0,\n      0,\n      0\n    ],\n    \"rotation\": [\n      0,\n      0,\n      -1.5707963267948966\n    ]\n  },\n  \"swordObjects\": 1,\n  \"transitions\": 50,\n  \"statePolicyChecks\": 11,\n  \"backTransformDrift\": 0,\n  \"handTransformDrift\": 0\n}\nPASS: production skeleton mounts, diagonal back orientation, unchanged hand transforms, single sword object, and 50 no-drift mount cycles.\n",
+    "stderr": ""
+  }
+]

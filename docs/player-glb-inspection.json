@@ -1,0 +1,381 @@
+{
+  "asset": "/assets/models/player/rat-knight.glb",
+  "bytes": 12581584,
+  "scene": "Scene",
+  "hierarchy": [
+    {
+      "name": "Scene",
+      "type": "Group",
+      "parent": null
+    },
+    {
+      "name": "target_character",
+      "type": "Object3D",
+      "parent": "Scene"
+    },
+    {
+      "name": "Mesh_0",
+      "type": "SkinnedMesh",
+      "parent": "target_character"
+    },
+    {
+      "name": "mixamorigHips",
+      "type": "Bone",
+      "parent": "target_character"
+    },
+    {
+      "name": "mixamorigSpine",
+      "type": "Bone",
+      "parent": "mixamorigHips"
+    },
+    {
+      "name": "mixamorigSpine1",
+      "type": "Bone",
+      "parent": "mixamorigSpine"
+    },
+    {
+      "name": "mixamorigSpine2",
+      "type": "Bone",
+      "parent": "mixamorigSpine1"
+    },
+    {
+      "name": "mixamorigNeck",
+      "type": "Bone",
+      "parent": "mixamorigSpine2"
+    },
+    {
+      "name": "mixamorigHead",
+      "type": "Bone",
+      "parent": "mixamorigNeck"
+    },
+    {
+      "name": "mixamorigHeadTop_End",
+      "type": "Bone",
+      "parent": "mixamorigHead"
+    },
+    {
+      "name": "headfront",
+      "type": "Bone",
+      "parent": "mixamorigHead"
+    },
+    {
+      "name": "mixamorigLeftShoulder",
+      "type": "Bone",
+      "parent": "mixamorigSpine2"
+    },
+    {
+      "name": "mixamorigLeftArm",
+      "type": "Bone",
+      "parent": "mixamorigLeftShoulder"
+    },
+    {
+      "name": "mixamorigLeftForeArm",
+      "type": "Bone",
+      "parent": "mixamorigLeftArm"
+    },
+    {
+      "name": "mixamorigLeftHand",
+      "type": "Bone",
+      "parent": "mixamorigLeftForeArm"
+    },
+    {
+      "name": "mixamorigLeftHandMiddle4",
+      "type": "Bone",
+      "parent": "mixamorigLeftHand"
+    },
+    {
+      "name": "mixamorigRightShoulder",
+      "type": "Bone",
+      "parent": "mixamorigSpine2"
+    },
+    {
+      "name": "mixamorigRightArm",
+      "type": "Bone",
+      "parent": "mixamorigRightShoulder"
+    },
+    {
+      "name": "mixamorigRightForeArm",
+      "type": "Bone",
+      "parent": "mixamorigRightArm"
+    },
+    {
+      "name": "mixamorigRightHand",
+      "type": "Bone",
+      "parent": "mixamorigRightForeArm"
+    },
+    {
+      "name": "mixamorigRightHandMiddle4",
+      "type": "Bone",
+      "parent": "mixamorigRightHand"
+    },
+    {
+      "name": "mixamorigLeftUpLeg",
+      "type": "Bone",
+      "parent": "mixamorigHips"
+    },
+    {
+      "name": "mixamorigLeftLeg",
+      "type": "Bone",
+      "parent": "mixamorigLeftUpLeg"
+    },
+    {
+      "name": "mixamorigLeftFoot",
+      "type": "Bone",
+      "parent": "mixamorigLeftLeg"
+    },
+    {
+      "name": "mixamorigLeftToeBase",
+      "type": "Bone",
+      "parent": "mixamorigLeftFoot"
+    },
+    {
+      "name": "mixamorigLeftToe_End",
+      "type": "Bone",
+      "parent": "mixamorigLeftToeBase"
+    },
+    {
+      "name": "mixamorigRightUpLeg",
+      "type": "Bone",
+      "parent": "mixamorigHips"
+    },
+    {
+      "name": "mixamorigRightLeg",
+      "type": "Bone",
+      "parent": "mixamorigRightUpLeg"
+    },
+    {
+      "name": "mixamorigRightFoot",
+      "type": "Bone",
+      "parent": "mixamorigRightLeg"
+    },
+    {
+      "name": "mixamorigRightToeBase",
+      "type": "Bone",
+      "parent": "mixamorigRightFoot"
+    },
+    {
+      "name": "mixamorigRightToe_End",
+      "type": "Bone",
+      "parent": "mixamorigRightToeBase"
+    }
+  ],
+  "bones": [
+    "mixamorigHips",
+    "mixamorigSpine",
+    "mixamorigSpine1",
+    "mixamorigSpine2",
+    "mixamorigNeck",
+    "mixamorigHead",
+    "mixamorigHeadTop_End",
+    "headfront",
+    "mixamorigLeftShoulder",
+    "mixamorigLeftArm",
+    "mixamorigLeftForeArm",
+    "mixamorigLeftHand",
+    "mixamorigLeftHandMiddle4",
+    "mixamorigRightShoulder",
+    "mixamorigRightArm",
+    "mixamorigRightForeArm",
+    "mixamorigRightHand",
+    "mixamorigRightHandMiddle4",
+    "mixamorigLeftUpLeg",
+    "mixamorigLeftLeg",
+    "mixamorigLeftFoot",
+    "mixamorigLeftToeBase",
+    "mixamorigLeftToe_End",
+    "mixamorigRightUpLeg",
+    "mixamorigRightLeg",
+    "mixamorigRightFoot",
+    "mixamorigRightToeBase",
+    "mixamorigRightToe_End"
+  ],
+  "animations": [
+    {
+      "name": "Running",
+      "durationSeconds": 0.667,
+      "tracks": 56
+    },
+    {
+      "name": "Walking",
+      "durationSeconds": 1.042,
+      "tracks": 56
+    },
+    {
+      "name": "01a10fae-d4d5-72e5-ace6-cc830b78946c",
+      "durationSeconds": 4.042,
+      "tracks": 56
+    },
+    {
+      "name": "01a10fb1-42e0-70de-9628-735b3ef4e968",
+      "durationSeconds": 2.042,
+      "tracks": 56
+    },
+    {
+      "name": "01a10fb1-fc3c-70a3-b564-88cda0588813",
+      "durationSeconds": 2.042,
+      "tracks": 56
+    },
+    {
+      "name": "01a10fb2-e41c-77fc-a7c5-2cc1ac53b709",
+      "durationSeconds": 3.542,
+      "tracks": 56
+    },
+    {
+      "name": "01a10fb3-8e13-75e8-afb0-d94a6529ed62",
+      "durationSeconds": 3.042,
+      "tracks": 56
+    },
+    {
+      "name": "01a10fb4-abe5-7736-9785-3578dbd64869",
+      "durationSeconds": 4.042,
+      "tracks": 56
+    },
+    {
+      "name": "Alert",
+      "durationSeconds": 4,
+      "tracks": 56
+    },
+    {
+      "name": "Attack",
+      "durationSeconds": 2.833,
+      "tracks": 56
+    },
+    {
+      "name": "Casual_Walk",
+      "durationSeconds": 4.208,
+      "tracks": 56
+    },
+    {
+      "name": "Chair_Sit_Idle_M",
+      "durationSeconds": 10.708,
+      "tracks": 56
+    },
+    {
+      "name": "Climb_Left_with_Both_Limbs_inplace",
+      "durationSeconds": 1.208,
+      "tracks": 56
+    },
+    {
+      "name": "Climb_Right_with_Both_Limbs_inplace",
+      "durationSeconds": 1.208,
+      "tracks": 56
+    },
+    {
+      "name": "Triple_Combo_Attack",
+      "durationSeconds": 4.333,
+      "tracks": 56
+    },
+    {
+      "name": "climbing_down_wall",
+      "durationSeconds": 2,
+      "tracks": 56
+    },
+    {
+      "name": "climbing_up_wall",
+      "durationSeconds": 2,
+      "tracks": 56
+    },
+    {
+      "name": "restpose",
+      "durationSeconds": 0.083,
+      "tracks": 56
+    }
+  ],
+  "skinnedMeshes": [
+    {
+      "name": "Mesh_0",
+      "triangles": 14136
+    }
+  ],
+  "materials": [
+    {
+      "name": "Material_0",
+      "type": "MeshStandardMaterial",
+      "metalness": 1,
+      "roughness": 1,
+      "color": "ffffff",
+      "maps": [
+        "map",
+        "normalMap",
+        "roughnessMap",
+        "metalnessMap"
+      ],
+      "textureIndexes": {
+        "map": 1,
+        "normalMap": 0,
+        "roughnessMap": 2,
+        "metalnessMap": 2
+      }
+    }
+  ],
+  "bindBounds": {
+    "min": [
+      -0.5923345075014674,
+      -3.302374367149298e-8,
+      -0.5842373902709731
+    ],
+    "max": [
+      0.5957377917280108,
+      1.6999999852947472,
+      0.5805942286309398
+    ],
+    "size": [
+      1.188072299229478,
+      1.700000018318491,
+      1.1648316189019128
+    ]
+  },
+  "configuredScale": 0.7,
+  "scaledHeight": 1.19,
+  "orientation": "GLTF Y-up, zero authored scene/root yaw; gameplay and camera use Three.js -Z forward, verify visually in browser.",
+  "hipsHorizontalMotionBeforeNeutralization": [
+    {
+      "clip": "01a10fb1-42e0-70de-9628-735b3ef4e968",
+      "maxHorizontalMeters": 2.545
+    },
+    {
+      "clip": "01a10fb1-fc3c-70a3-b564-88cda0588813",
+      "maxHorizontalMeters": 0.226
+    },
+    {
+      "clip": "01a10fb2-e41c-77fc-a7c5-2cc1ac53b709",
+      "maxHorizontalMeters": 2.325
+    },
+    {
+      "clip": "01a10fb3-8e13-75e8-afb0-d94a6529ed62",
+      "maxHorizontalMeters": 0.136
+    },
+    {
+      "clip": "01a10fb4-abe5-7736-9785-3578dbd64869",
+      "maxHorizontalMeters": 0.107
+    },
+    {
+      "clip": "Attack",
+      "maxHorizontalMeters": 0.338
+    },
+    {
+      "clip": "Casual_Walk",
+      "maxHorizontalMeters": 0.06
+    },
+    {
+      "clip": "Climb_Left_with_Both_Limbs_inplace",
+      "maxHorizontalMeters": 0.111
+    },
+    {
+      "clip": "Climb_Right_with_Both_Limbs_inplace",
+      "maxHorizontalMeters": 0.111
+    },
+    {
+      "clip": "Triple_Combo_Attack",
+      "maxHorizontalMeters": 1.316
+    },
+    {
+      "clip": "climbing_down_wall",
+      "maxHorizontalMeters": 0.238
+    },
+    {
+      "clip": "climbing_up_wall",
+      "maxHorizontalMeters": 0.234
+    }
+  ]
+}

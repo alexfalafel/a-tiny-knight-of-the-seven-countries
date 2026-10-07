@@ -1,0 +1,29 @@
+{
+  "date": "2026-10-04",
+  "source": "Codex embedded browser, structural/functional checks only; NOT a real Chrome FPS benchmark",
+  "greatHallSnapshot": {
+    "canvas": [1894, 1244], "pixelRatio": 1,
+    "drawCalls": 79, "triangles": 12873,
+    "objects": 386, "meshes": 291, "visibleMeshes": 81,
+    "materials": 85, "geometryResources": 115,
+    "uploadedGeometries": 40, "textures": 1,
+    "playerMeshes": 50, "playerMaterials": 15, "playerShadowCasters": 44,
+    "activeLights": 3, "inactiveLights": 5, "shadowLights": 1,
+    "visibleShadowCasters": 54, "rooms": 6, "visibleRooms": 1, "updatingRooms": 1,
+    "staticColliders": 107, "collisionChecks": 18, "raycasts": 0,
+    "activeParticleEmitters": 0, "renderedPoints": 0
+  },
+  "captureFunctionalCheck": {
+    "room": "throneRoom", "canvas": [1254, 884], "durationSeconds": 15.08,
+    "frames": 21, "averageFps": 1.39, "medianFrameMs": 1000.1,
+    "invalidForRealBrowserComparison": true,
+    "visibilityState": "visible", "hiddenFrameSamples": 0,
+    "gpuSamples": 15, "gpuAverageMs": 0.43, "gpuMaximumMs": 3.91,
+    "renderSubmissionCpuMs": 0.73, "longTasks": 0,
+    "uploadedGeometriesAverageAndMax": 55, "texturesAverageAndMax": 1,
+    "heapSamples": 15, "heapStartBytes": 18931328,
+    "heapEndBytes": 18907613, "heapMaximumBytes": 19254909,
+    "consoleErrorsOrWarnings": 0,
+    "note": "Roughly one-second frame cadence despite low measured work; host scheduling/throttling suspected, not proven. Heap samples cannot identify GC."
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "results": [
+    {
+      "name": "pointer unlock, hidden tab, editable focus, and listener disposal",
+      "passed": true
+    },
+    {
+      "name": "death overrides climbing and impact freeze; retry clears directional state",
+      "passed": true
+    },
+    {
+      "name": "held attack chaining survives presentation freezes and stops on release",
+      "passed": true
+    },
+    {
+      "name": "only living particles draw immediately; ten-minute simulated pool stays bounded",
+      "passed": true
+    },
+    {
+      "name": "camera impulses settle without drift; reset clears impulses",
+      "passed": true
+    },
+    {
+      "name": "lock break grace advances once per frame and clears dead/changed-room targets",
+      "passed": true
+    },
+    {
+      "name": "boss true stagger, committed attack, and death clear residual cosmetic recoil",
+      "passed": true
+    },
+    {
+      "name": "fragment, guardian, and tunnel events remain idempotent across retry-style reuse",
+      "passed": true
+    }
+  ],
+  "simulatedParticleSoakSeconds": 600,
+  "simulatedHeldAttackSeconds": 30
+}
