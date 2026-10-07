@@ -1,6 +1,6 @@
 # A Tiny Knight of the 7 Countries
 
-This Three.js browser prototype now contains the complete graybox game loop: six castle rooms, traversal and climbing, crown progression, rat-tunnel fast travel, three bosses, both throne endings, and a production-ready player character visual pipeline. The player loads the supplied production model at `public/assets/models/player/rat-knight.glb`. The model loader and semantic animation mapping keep the fallback playable when the asset or individual clips are missing.
+This Three.js browser game follows a tiny armored rat knight through an interconnected human royal keep. The current assignment milestone includes six castle rooms, traversal and climbing, crown progression, rat-tunnel fast travel, three bosses, both throne endings, and a production player-character visual pipeline. The player loads `public/assets/models/player/rat-knight.glb`; a procedural fallback keeps the game playable if the asset or optional clips are unavailable. Development may continue after this submission milestone.
 
 ## Run locally
 
@@ -15,7 +15,7 @@ Open the local URL printed by Vite. Use `npm run build` to create the deployable
 
 ## Controls
 
-- Click the game or **Click to Begin** to capture the mouse; press **Esc** to release it.
+- Click **Begin** or the game canvas to capture the mouse; press **Esc** to release it.
 - **W / A / S / D** move relative to the camera.
 - **Mouse** rotates the camera.
 - **Space** jumps.
@@ -26,7 +26,8 @@ Open the local URL printed by Vite. Use `npm run build` to create the deployable
 - While climbing, **W / S** climb vertically and **A / D** move sideways. **Space** leaps away from the surface and spends climbing stamina. The stamina circle appears near the rat while attached and refills on solid ground.
 - **R** uses Royal Tonic while alive (3 charges, 40 HP, 1-second commitment); retries after death.
 - **Middle Mouse** toggles combat lock-on.
-- **2 / 3** play the bow / kneel emotes; repeat the key to cancel.
+- **2** plays the kneeling bow once; **3** enters or cancels the held kneel pose.
+- **Tab / Middle Mouse** toggles combat lock-on.
 - **F3** toggles the performance panel.
 - **F2** cycles the development-only player visual test poses and pauses encounters until the cycle reaches **LIVE GAME**.
 
@@ -49,4 +50,60 @@ The Armory crown fragment is locked until the Armored Beetle guardian is defeate
 - `src/CombatEncounter.js` resolves one reusable forward-arc hit check at each sword impact.
 - `src/BossController.js` provides shared boss state, health, event, arena, and reset behavior; `src/ArmoredBeetleBoss.js` implements the Armory guardian and its attack windows.
 
-The player visuals are grouped separately from the controller. The procedural rat-knight is retained as a loading/error fallback. Camera obstruction uses cached level collision bounds. See `docs/OVERNIGHT_QA_REPORT.md` for the stabilization results and remaining manual checks.
+The player visuals are grouped separately from the controller. The procedural rat-knight is retained as a loading/error fallback. Camera obstruction uses cached level collision bounds. The project has diagnostic and validation records under `docs/`, `scripts/`, and `outputs/`; those records distinguish automated structural checks from browser and hardware-specific performance observations.
+
+## Concept Inspiration
+
+The concept is an original tiny rat-knight dark-fantasy adventure set inside an imposing royal fortress. Its central visual idea is to explore familiar human architecture from rat scale: doors, furniture, stairs, banners, corridors, and throne architecture should make the player feel small without shrinking the character. The serious, regal treatment of an unusually small hero gives the game its own tone. The castle, queen archetype, and story are original project elements; references below informed design direction and do not indicate included third-party characters or artwork.
+
+Design references include Dark Souls 3-style third-person framing and combat presentation, Breath of the Wild-inspired climbing and stamina readability, dark medieval royal-fortress architecture, and restrained bronze/royal-fantasy HUD styling.
+
+## Gameplay References
+
+- **Dark Souls 3:** a close third-person camera, target lock-on, deliberate melee presentation, readable boss attacks, and punish windows.
+- **Breath of the Wild:** selected climbable surfaces, stamina-based traversal, and a circular green stamina display.
+- **Action RPG conventions:** room-based progression, telegraphed boss attacks, health management, and a limited healing resource.
+
+These are gameplay design references. The game uses original characters, environments, UI composition, and implementation.
+
+## Sonic References
+
+The intended sound palette pairs a sharp sword-air whoosh with compact metal, armor, or chitin impacts, a bright magical royal-treasure pickup, and a short triumphant medieval victory fanfare. The bespoke sound effects were generated for this project using ElevenLabs and then selected by the project author. The [prompt log](PROMPT_LOG.md) records the generation briefs and iteration notes; [asset attribution](ASSET_ATTRIBUTION.md) lists the resulting files.
+
+## Gameplay Objective
+
+Explore the six-room keep, use traversal and discovered rat tunnels, collect five crown fragments, and defeat the stronger guardians protecting two of them. Once the crown is restored, return to the Throne Room and make the finale choice. The two endings are described in-game.
+
+## Audio Requirement Mapping
+
+- **Reward:** `crown-fragment.mp3` plays when a unique crown fragment is collected.
+- **Damage:** a `sword-hit` variant plays when the player actually loses HP; misses and damage prevented by invulnerability do not trigger this player-damage cue.
+- **End:** `game-complete.mp3` plays on successful ending resolution.
+- **Additional combat cues:** sword-swing variants play when an attack begins; sword-hit variants also provide outgoing confirmed-hit feedback.
+
+## AI Tools and Models
+
+The project records identify these tools and roles:
+
+- **OpenAI Codex / ChatGPT:** game architecture, Three.js implementation, debugging, iterative prompt work, and documentation assistance. Multiple model configurations were used during development; exact model names and per-task assignments are not consistently recorded, so none are asserted here.
+- **ElevenLabs:** generated the project sound effects from the briefs recorded in `PROMPT_LOG.md`; the project author curated the final selections.
+- **Meshy:** used in the production rat-knight 3D model workflow, including generation/processing, topology/texturing preparation, rigging, and animation workflow, as recorded for this project. The exact Meshy model/features and settings are not preserved.
+- **GitHub / GitHub Desktop:** repository version control, hosting, and project transfer between Windows and Mac development copies.
+
+This inventory reflects the project records and author-provided development history; it does not infer unrecorded model versions or prompts. See [asset attribution and licensing](ASSET_ATTRIBUTION.md) for asset-specific notes.
+
+## Final Tech Stack
+
+- JavaScript with ES modules; HTML5 entry point and CSS presentation.
+- Three.js **0.180.0** (declared `^0.180.0`); Vite **7.3.6** in the current lockfile (declared `^7.1.7`).
+- WebGL rendering through Three.js; Web Audio API `AudioContext` for sound effects.
+- glTF 2.0 / GLB player model loading with Three.js `GLTFLoader`; `THREE.AnimationMixer` for animation.
+- Node.js and npm for local development and package scripts. The repository does not pin their exact versions; use the versions installed in your environment.
+
+## Asset Attribution
+
+See [ASSET_ATTRIBUTION.md](ASSET_ATTRIBUTION.md) for the model, audio, dependencies, procedural visuals, and licensing/provenance notes.
+
+## Further Development
+
+This is the current assignment submission milestone, not a declaration that the game is permanently finished. Supported directions for continued work include improving all-fours exploration locomotion, an environment/castle visual overhaul, final music, further visual and animation/emote polish, and continued encounter/boss polish.
