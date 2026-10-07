@@ -121,15 +121,19 @@ console.log('PASS combat damage, climb/detach, all-room tunnel discovery/travel 
 
 progression.prepareFinaleDebugState(); player.teleport(level.throneRoomDebugSpawn);
 assert(finale.start());
+assert.equal(finale.queen.visible, true, 'Queen is visible when the finale starts');
 for (let i = 0; i < 600 && !finale.choiceReady; i++) { finale.update(1 / 60); player.updateVisual(1 / 60); }
-assert(finale.choiceReady); finale.chooseGive();
-for (let i = 0; i < 1200 && finale.phase !== 'GOOD_RESULTS'; i++) { finale.update(1 / 60); player.updateVisual(1 / 60); }
+assert(finale.choiceReady); assert.equal(finale.queen.visible, true, 'Queen remains visible during the throne choice'); finale.chooseGive();
+for (let i = 0; i < 1200 && finale.phase !== 'GOOD_RESULTS'; i++) { finale.update(1 / 60); player.updateVisual(1 / 60); assert.equal(finale.queen.visible, true, 'Good Ending retains the Queen throughout'); }
 assert.equal(finale.phase, 'GOOD_RESULTS');
+assert.equal(finale.queen.visible, true, 'Good Ending continues to use the Queen');
 // Reinitialize branch state using existing debug/reset entry point; same rig/crown.
 endings.reset(); finale.phase = 'IDLE'; finale.choiceReady = false;
 player.teleport(level.throneRoomDebugSpawn); assert(finale.start());
+assert.equal(finale.queen.visible, true, 'Reset/replay restores the Queen');
 for (let i = 0; i < 600 && !finale.choiceReady; i++) finale.update(1 / 60);
 finale.chooseClaim();
+assert.equal(finale.queen.visible, true, 'Queen remains visible through the claim choice and Dragon encounter');
 for (let i = 0; i < 1200 && !finale.dragonBoss.isActive; i++) { finale.update(1 / 60); player.updateVisual(1 / 60); }
 assert(finale.dragonBoss.isActive);
 for (let i = 0; i < 600; i++) finale.dragonBoss.update(1 / 60, player);
@@ -137,7 +141,9 @@ finale.dragonBoss.setForcedVulnerable(true);
 for (let i = 0; i < 30 && !finale.dragonBoss.isDead; i++) finale.dragonBoss.receiveSwordHit({ damage: 3, comboStep: 2 });
 assert(finale.dragonBoss.isDead);
 endings.dragonDefeated = true; endings.completeSecret(); finale.startDragonDeath();
-for (let i = 0; i < 3600 && finale.phase !== 'SECRET_RESULTS'; i++) { finale.update(1 / 60); player.updateVisual(1 / 60); }
+assert.equal(finale.queen.visible, false, 'Queen is hidden as the post-Dragon death finale begins');
+for (let i = 0; i < 3600 && finale.phase !== 'SECRET_RESULTS'; i++) { finale.update(1 / 60); player.updateVisual(1 / 60); assert.equal(finale.queen.visible, false, 'Queen stays hidden throughout the post-Dragon finale'); }
 assert.equal(finale.phase, 'SECRET_RESULTS');
+assert.equal(finale.queen.visible, false, 'Queen stays hidden through the Tiny King ending');
 console.log('PASS both throne choices, dragon activation/AI/death, good and Tiny King ending sequences with batched rig');
 console.log('Final scene inventory (test scene, not browser frame):', new SceneInventory().read(scene));

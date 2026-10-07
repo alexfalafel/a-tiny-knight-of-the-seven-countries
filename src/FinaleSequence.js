@@ -42,6 +42,7 @@ export class FinaleSequence {
 
   start() {
     if (!this.endings.beginFinale(this.progression.crownComplete)) return false;
+    this.queen.visible = true;
     this.phase = PHASE.APPROACH; this.timer = 0;
     this.onStart?.();
     this.input.clearActions();
@@ -192,6 +193,7 @@ export class FinaleSequence {
 
   startDragonDeath() {
     if (this.phase !== PHASE.IDLE || !this.dragonBoss.isDying) return false;
+    this.queen.visible = false;
     this.phase = PHASE.SECRET_DEATH; this.timer = 0; this.input.clearActions();
     this.onStart?.(); this.ui.choice.classList.remove("visible");
     this.ui.endingText.classList.remove("visible");
